@@ -1,0 +1,14 @@
+{
+  "name": "ai-skills",
+  "owner": {
+    "name": "Mikhail Sidelnikov"
+  },
+  "plugins": [
+    {
+      "name": "harvard-negotiation-coach",
+      "source": "./plugins/harvard-negotiation-coach",
+      "description": "Коуч по Гарвардскому методу переговоров: разбор спорных ситуаций, подготовка к переговорам, ответы на давление, ролевые тренировки.",
+      "version": "1.0.0"
+    }
+  ]
+}
