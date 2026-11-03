@@ -7,8 +7,8 @@
     {
       "name": "harvard-negotiation-coach",
       "source": "./plugins/harvard-negotiation-coach",
-      "description": "Коуч по Гарвардскому методу переговоров: разбор спорных ситуаций, подготовка к переговорам, ответы на давление, ролевые тренировки.",
-      "version": "1.0.0"
+      "description": "Harvard negotiation method coach (Getting to Yes): disputes, negotiation prep, replies to pressure, role-play practice. Replies in the user's language (EN/RU). / Коуч по Гарвардскому методу переговоров, отвечает на языке пользователя.",
+      "version": "1.1.0"
     }
   ]
 }

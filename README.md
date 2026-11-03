@@ -6,7 +6,7 @@
 
 | Скилл | Описание | Скачать |
 |---|---|---|
-| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Коуч по Гарвардскому методу переговоров (Фишер, Юри, Паттон): разбор спорных ситуаций, подготовка к переговорам, ответы на давление, ролевые тренировки | [zip](dist/harvard-negotiation-coach.zip) |
+| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Коуч по Гарвардскому методу переговоров (Фишер, Юри, Паттон): разбор спорных ситуаций, подготовка к переговорам, ответы на давление, ролевые тренировки. Отвечает на языке пользователя (RU/EN). *Harvard negotiation coach (Getting to Yes); replies in the user's language.* | [zip](dist/harvard-negotiation-coach.zip) |
 
 ## Установка
 
@@ -76,6 +76,7 @@ ai-skills/
 
 - В начале файла обязателен блок frontmatter с полями `name` и `description`.
 - `name`: латиница в нижнем регистре, цифры и дефисы, до 64 символов. Должно совпадать с именем папки.
+- Чтобы скилл работал для пользователей на разных языках, пишите инструкции на английском, добавляйте правило «отвечай на языке пользователя» и делайте `description` двуязычным.
 - `description`: одно предложение о том, когда применять скилл. По нему Claude решает, подключать ли скилл. Угловые скобки не используйте.
 
 ## Об источниках
