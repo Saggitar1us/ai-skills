@@ -28,7 +28,6 @@ Add the collection (once):
 
 Install a skill, for example:
 
-
 ```
 /plugin install harvard-negotiation-coach@ai-skills
 ```
