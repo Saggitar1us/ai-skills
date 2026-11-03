@@ -1,7 +1,7 @@
 {
   "name": "harvard-negotiation-coach",
   "version": "1.1.0",
-  "description": "Harvard negotiation method coach (Getting to Yes): disputes, negotiation prep, replies to pressure, role-play practice. Replies in the user's language (EN/RU). / Коуч по Гарвардскому методу переговоров, отвечает на языке пользователя.",
+  "description": "Coach for the Harvard negotiation method (Getting to Yes by Fisher, Ury and Patton): dispute analysis, negotiation prep, responses to pressure and dirty tricks, role-play practice. Replies in the user's language.",
   "author": {
     "name": "Mikhail Sidelnikov"
   }

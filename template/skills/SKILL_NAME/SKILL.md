@@ -5,12 +5,16 @@ description: SKILL_DESCRIPTION
 
 # SKILL_TITLE
 
-Опишите здесь, что делает скилл, когда его применять и как Claude должен действовать.
+Describe what the skill does, when to use it and how Claude should act.
 
-## Когда использовать
+## Language
+
+- Always reply in the user's language. If the user switches language, switch with them.
+
+## When to use
 
 - ...
 
-## Как действовать
+## How to act
 
 1. ...

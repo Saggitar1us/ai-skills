@@ -1,85 +1,49 @@
 # AI Skills
 
-Коллекция скиллов для Claude. Каждый скилл можно установить отдельно.
+A collection of skills for Claude. Each skill can be installed separately.
 
-## Скиллы
+## Skills
 
-| Скилл | Описание | Скачать |
+<!-- skills:start -->
+| Skill | Description | Download |
 |---|---|---|
-| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Коуч по Гарвардскому методу переговоров (Фишер, Юри, Паттон): разбор спорных ситуаций, подготовка к переговорам, ответы на давление, ролевые тренировки. Отвечает на языке пользователя (RU/EN). *Harvard negotiation coach (Getting to Yes); replies in the user's language.* | [zip](dist/harvard-negotiation-coach.zip) |
+| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Coach for the Harvard negotiation method (Getting to Yes by Fisher, Ury and Patton): dispute analysis, negotiation prep, responses to pressure and dirty tricks, role-play practice. Replies in the user's language. | [zip](dist/harvard-negotiation-coach.zip) |
+<!-- skills:end -->
 
-## Установка
+## Installation
 
-### Claude (веб, десктоп, мобильное приложение)
+### Claude (web, desktop, mobile)
 
-1. Скачайте zip нужного скилла из папки [`dist/`](dist/).
-2. Откройте **Настройки → Возможности (Capabilities) → Навыки (Skills)**.
-3. Нажмите **Загрузить навык** и выберите zip-файл.
+1. Download the skill's zip from the table above.
+2. Open **Settings → Capabilities → Skills**.
+3. Click **Upload skill** and select the zip file.
 
-### Claude Code: через маркетплейс плагинов
+### Claude Code: via the plugin marketplace
 
-Подключить коллекцию (один раз):
+Add the collection (once):
 
 ```
 /plugin marketplace add sidelnikovmike/ai-skills
 ```
 
-Установить нужный скилл:
+Install a skill, for example:
 
 ```
 /plugin install harvard-negotiation-coach@ai-skills
 ```
 
-Обновить коллекцию после появления новых скиллов: `/plugin marketplace update ai-skills`.
+To get newly added skills and updates: `/plugin marketplace update ai-skills`.
 
-### Claude Code: вручную
+### Claude Code: manually
 
-Скопируйте папку `plugins/<скилл>/skills/<скилл>` в `~/.claude/skills/`.
+Unzip the skill's archive into `~/.claude/skills/`.
 
-## Структура репозитория
+## Sources
 
-```
-ai-skills/
-├── .claude-plugin/
-│   └── marketplace.json        # список скиллов (генерируется скриптом)
-├── plugins/
-│   └── <имя-скилла>/
-│       ├── .claude-plugin/
-│       │   └── plugin.json     # имя, версия, описание
-│       └── skills/
-│           └── <имя-скилла>/
-│               └── SKILL.md    # сам скилл (+ доп. файлы при необходимости)
-├── dist/                       # zip-архивы для загрузки в Claude (генерируются)
-├── template/                   # шаблон нового скилла
-└── scripts/
-    ├── new_skill.py            # создать скилл из шаблона
-    └── build.py                # проверить скиллы, собрать zip, обновить marketplace.json
-```
+Skills based on books contain an original summary of the ideas, not the text of the book. The books themselves are not included in this repository.
 
-## Как добавить новый скилл
+- **harvard-negotiation-coach**: Roger Fisher, William Ury, Bruce Patton. *Getting to Yes: Negotiating Agreement Without Giving In*. Russian edition: «Гарвардский метод переговоров» (Mann, Ivanov & Ferber).
 
-1. Создайте скилл из шаблона:
-   ```
-   python3 scripts/new_skill.py sales-coach "Помогает готовить коммерческие предложения и разбирать возражения клиентов."
-   ```
-2. Напишите инструкции в `plugins/sales-coach/skills/sales-coach/SKILL.md`. Рядом можно положить дополнительные файлы: справочники, примеры, шаблоны.
-3. Соберите репозиторий:
-   ```
-   python3 scripts/build.py
-   ```
-   Скрипт проверит имена и описания, создаст `dist/sales-coach.zip` и добавит скилл в `marketplace.json`.
-4. Добавьте строку в таблицу «Скиллы» выше, затем сделайте commit и push.
+---
 
-При изменении существующего скилла поднимите `version` в его `plugin.json` и снова запустите `build.py`.
-
-### Правила для SKILL.md
-
-- В начале файла обязателен блок frontmatter с полями `name` и `description`.
-- `name`: латиница в нижнем регистре, цифры и дефисы, до 64 символов. Должно совпадать с именем папки.
-- Чтобы скилл работал для пользователей на разных языках, пишите инструкции на английском, добавляйте правило «отвечай на языке пользователя» и делайте `description` двуязычным.
-- `description`: одно предложение о том, когда применять скилл. По нему Claude решает, подключать ли скилл. Угловые скобки не используйте.
-
-## Об источниках
-
-Скиллы, основанные на книгах, содержат авторский пересказ идей, без текста оригинала. Сами книги в репозиторий не добавляются.
-- **harvard-negotiation-coach**: Фишер Р., Юри У., Паттон Б. *Гарвардский метод переговоров* (изд. «Манн, Иванов и Фербер»).
+Want to add or change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md).

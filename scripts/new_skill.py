@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Создаёт новый скилл из шаблона.
+"""Create a new skill from the template.
 
-Использование:
-    python3 scripts/new_skill.py my-skill "Короткое описание, когда использовать скилл"
+Usage:
+    python3 scripts/new_skill.py my-skill "One sentence on when to use the skill"
 """
 import re
 import shutil
@@ -17,19 +17,19 @@ DEFAULT_AUTHOR = "Mikhail Sidelnikov"
 
 def main() -> None:
     if len(sys.argv) < 3:
-        sys.exit('Использование: python3 scripts/new_skill.py <имя-скилла> "<описание>"')
+        sys.exit('Usage: python3 scripts/new_skill.py <skill-name> "<description>"')
 
     name, description = sys.argv[1], sys.argv[2]
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", name) or len(name) > 64:
-        sys.exit("Имя: латиница в нижнем регистре, цифры и дефисы, до 64 символов (например, sales-coach).")
+        sys.exit("Name: lowercase letters, digits and hyphens, up to 64 chars (e.g. sales-coach).")
     if "<" in description or ">" in description:
-        sys.exit("В описании нельзя использовать угловые скобки.")
+        sys.exit("Description must not contain angle brackets.")
 
     target = PLUGINS / name
     if target.exists():
-        sys.exit(f"Скилл {name} уже существует: {target}")
+        sys.exit(f"Skill {name} already exists: {target}")
 
-    shutil.copytree(TEMPLATE, target)
+    shutil.copytree(TEMPLATE, target, ignore=shutil.ignore_patterns(".DS_Store", "__pycache__"))
     (target / "skills" / "SKILL_NAME").rename(target / "skills" / name)
 
     title = name.replace("-", " ").capitalize()
@@ -42,8 +42,8 @@ def main() -> None:
                         .replace("AUTHOR_NAME", DEFAULT_AUTHOR))
             path.write_text(text, encoding="utf-8")
 
-    print(f"Готово: {target.relative_to(ROOT)}")
-    print(f"Отредактируйте plugins/{name}/skills/{name}/SKILL.md, затем запустите: python3 scripts/build.py")
+    print(f"Done: {target.relative_to(ROOT)}")
+    print(f"Edit plugins/{name}/skills/{name}/SKILL.md, then run: python3 scripts/build.py")
 
 
 if __name__ == "__main__":
