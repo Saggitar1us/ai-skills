@@ -7,7 +7,7 @@ A collection of skills for Claude. Each skill can be installed separately.
 <!-- skills:start -->
 | Skill | Description | Download |
 |---|---|---|
-| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Helps you get through a tough conversation: asking for a raise, agreeing on a price or contract, a disagreement with a colleague, a family dispute. Analyzes the situation, helps you prepare, suggests what to say when you're under pressure, and lets you rehearse. Based on the book Getting to Yes. | [zip](dist/harvard-negotiation-coach.zip) |
+| [harvard-negotiation-coach](plugins/harvard-negotiation-coach/skills/harvard-negotiation-coach/SKILL.md) | Helps you get through a tough conversation: asking for a raise, agreeing on a price or contract, a disagreement with a colleague, a family dispute. Analyzes the situation, helps you prepare, suggests what to say when you're under pressure, and lets you rehearse. Based on the book Getting to Yes. | [zip](https://github.com/sidelnikovmike/ai-skills/raw/main/dist/harvard-negotiation-coach.zip) |
 <!-- skills:end -->
 
 ## Installation
