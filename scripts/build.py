@@ -85,7 +85,7 @@ def update_readme(entries: list) -> None:
     for e in entries:
         link = f"plugins/{e['name']}/skills/{e['name']}/SKILL.md"
         desc = e["description"].replace("|", "\\|")
-        rows.append(f"| [{e['name']}]({link}) | {desc} | [zip](dist/{e['name']}.zip) |")
+        rows.append(f"| [{e['name']}]({link}) | {desc} | [zip](https://github.com/sidelnikovmike/ai-skills/raw/main/dist/{e['name']}.zip) |")
     table = "\n".join(rows)
     pattern = re.compile(re.escape(README_START) + r".*?" + re.escape(README_END), re.S)
     README.write_text(pattern.sub(f"{README_START}\n{table}\n{README_END}", text), encoding="utf-8")

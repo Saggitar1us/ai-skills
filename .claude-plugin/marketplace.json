@@ -9,6 +9,12 @@
       "source": "./plugins/harvard-negotiation-coach",
       "description": "Helps you get through a tough conversation: asking for a raise, agreeing on a price or contract, a disagreement with a colleague, a family dispute. Analyzes the situation, helps you prepare, suggests what to say when you're under pressure, and lets you rehearse. Based on the book Getting to Yes.",
       "version": "1.3.0"
+    },
+    {
+      "name": "test-automation-coach",
+      "source": "./plugins/test-automation-coach",
+      "description": "Explains test automation in plain words, helps decide whether automating is worth it, plans automation and QA processes from scratch, and reviews or writes autotests without over-engineering. Based on the book Let's automate it!",
+      "version": "0.1.0"
     }
   ]
 }
